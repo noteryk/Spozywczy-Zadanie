@@ -1,0 +1,14 @@
+C:\Users\error\source\repos\spozywczy\spozywczy\bin\Debug\net6.0\spozywczy.exe
+C:\Users\error\source\repos\spozywczy\spozywczy\bin\Debug\net6.0\spozywczy.deps.json
+C:\Users\error\source\repos\spozywczy\spozywczy\bin\Debug\net6.0\spozywczy.runtimeconfig.json
+C:\Users\error\source\repos\spozywczy\spozywczy\bin\Debug\net6.0\spozywczy.dll
+C:\Users\error\source\repos\spozywczy\spozywczy\bin\Debug\net6.0\spozywczy.pdb
+C:\Users\error\source\repos\spozywczy\spozywczy\obj\Debug\net6.0\spozywczy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\error\source\repos\spozywczy\spozywczy\obj\Debug\net6.0\spozywczy.AssemblyInfoInputs.cache
+C:\Users\error\source\repos\spozywczy\spozywczy\obj\Debug\net6.0\spozywczy.AssemblyInfo.cs
+C:\Users\error\source\repos\spozywczy\spozywczy\obj\Debug\net6.0\spozywczy.csproj.CoreCompileInputs.cache
+C:\Users\error\source\repos\spozywczy\spozywczy\obj\Debug\net6.0\spozywczy.dll
+C:\Users\error\source\repos\spozywczy\spozywczy\obj\Debug\net6.0\refint\spozywczy.dll
+C:\Users\error\source\repos\spozywczy\spozywczy\obj\Debug\net6.0\spozywczy.pdb
+C:\Users\error\source\repos\spozywczy\spozywczy\obj\Debug\net6.0\spozywczy.genruntimeconfig.cache
+C:\Users\error\source\repos\spozywczy\spozywczy\obj\Debug\net6.0\ref\spozywczy.dll
