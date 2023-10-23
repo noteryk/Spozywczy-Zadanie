@@ -1,4 +1,4 @@
-﻿using spozywczy;
+using spozywczy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +14,9 @@ namespace spozywczy
     {
 
         // stworzenie wlasciwosci klasy magazyn i uzycie get set do pobierania i ustawiania wartosci zmiennych w klasie
-        public string Nazwa {  get; set; }
+        private string Nazwa {  get; set; }
         // stworzenie listy produktow w magazynie
-        public List<Produkt> Produkty { get; set; }
+        private List<Produkt> Produkty { get; set; }
         public Adres Adres { get; set; }
         
         // stworzenie konstruktora klasy magazyn
@@ -26,6 +26,19 @@ namespace spozywczy
             Adres = adres;
             Nazwa = nazwa;
         }
+
+        // stworzenie metody pobierajacej nazwe magazynu, aby moc ja wykorzystac w innych klasach
+        public string PobierzNazwe()
+        {
+            return Nazwa;
+        }
+
+
+        // stworzenie metody pobierajacej produkty z magazynu, aby moc ja wykorzystac w innych klasach
+        public List<Produkt> pobierzProdukty() {
+            return Produkty;
+        }
+
 
         // stworzenie metody dodajacej produkt do magazynu
         public void DodajProdukt(Produkt produkt)
