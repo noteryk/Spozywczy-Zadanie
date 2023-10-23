@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,10 +12,10 @@ namespace spozywczy
     {
         // stworzenie wlasciwosci klasy adres i uzycie get set do pobierania i ustawiania wartosci zmiennych w klasie
         public string Ulica { get; set; }
-        public string KodPocztowy { get; set; }
-        public string Miejscowosc { get; set; }
-        public int NumerPosesji { get; set; }
-        public int NumerLokalu { get; set; }
+        private string KodPocztowy { get; set; }
+        private string Miejscowosc { get; set; }
+        private int NumerPosesji { get; set; }
+        private int NumerLokalu { get; set; }
 
         // konstruktor klasy adres z parametrami ktore musza byc podane przy tworzeniu obiektu klasy adres
         public Adres(string ulica, string kodPocztowy, string miejscowosc, int numerPosesji, int numerLokalu)
