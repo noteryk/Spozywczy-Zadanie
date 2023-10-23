@@ -1,4 +1,4 @@
-﻿
+
 
 // Importowanie bibliotek
 using spozywczy;
@@ -502,17 +502,17 @@ void WyswietlProduktyMagazyn()
     {
         // sprawdza czy magazyn ma produkty
         Magazyn? magazyn = magazyny[i];
-        if (magazyn.Produkty.Count == 0)
+        if (magazyn.pobierzProdukty().Count == 0)
         {
-            Console.WriteLine("Magazyn " + magazyn.Nazwa + " nie ma produktów");
+            Console.WriteLine("Magazyn " + magazyn.PobierzNazwe() + " nie ma produktów");
             continue;
         }
 
         // wyswietla produkty w magazynie
-        for (int i1 = 0; i1 < magazyn.Produkty.Count; i1++)
+        for (int i1 = 0; i1 < magazyn.pobierzProdukty().Count; i1++)
         {
-            Produkt? produkt = magazyn.Produkty[i1];
-            Console.WriteLine("Indeks: " + i1 + " | Produkt " + produkt.NazwaProduktu + " (" + produkt.NazwaProducent + ") w magazynie " + magazyn.Nazwa + " o indeksie: " + i + " | Cena: " + produkt.Cena);
+            Produkt? produkt = magazyn.pobierzProdukty()[i1];
+            Console.WriteLine("Indeks: " + i1 + " | Produkt " + produkt.PobierzNazweProduktu() + " (" + produkt.PobierzNazweProducenta() + ") w magazynie " + magazyn.PobierzNazwe() + " o indeksie: " + i + " | Cena: " + produkt.PobierzCene());
         }
 
     }
