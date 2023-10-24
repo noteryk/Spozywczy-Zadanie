@@ -64,10 +64,12 @@ for (; ; )
         // Try catch aby zlapac bledy i wypisac je jako tekst, aby uniknac wyrzucenia programu
         try
         {
+            
             Console.WriteLine("Podaj dane magazynu:");
 
             Console.Write("Nazwa magazynu: ");
             // Pobranie nazwy magazynu
+
             string nazwaMagazynu = Console.ReadLine();
 
             Console.Write("Ulica: ");
@@ -77,12 +79,12 @@ for (; ; )
             Console.Write("Miejscowość: ");
             string miejscowosc = Console.ReadLine();
 
-            int numerPosesji;
+            string numerPosesji;
             try
             {
                 Console.Write("Numer posesji: ");
-                // Konwersja typu ze string na int numeru posesji
-                numerPosesji = Convert.ToInt32(Console.ReadLine());
+                // Konwersja typu
+                numerPosesji = Convert.ToString(Console.ReadLine());
             }
             // Wyrzucenie bledu gdy uzytkownik poda zly format
             catch (FormatException)
@@ -91,11 +93,11 @@ for (; ; )
                 return false;
             }
 
-            int numerLokalu;
+            string numerLokalu;
             try
             {
                 Console.Write("Numer lokalu: ");
-                numerLokalu = Convert.ToInt32(Console.ReadLine());
+                numerLokalu = Convert.ToString(Console.ReadLine());
             }
             catch (FormatException)
             {
@@ -142,11 +144,11 @@ for (; ; )
                 Console.Write("Miejscowość: ");
                 string miejscowosc = Console.ReadLine();
 
-                int numerPosesji;
+                string numerPosesji;
                 try
                 {
                     Console.Write("Numer posesji: ");
-                    numerPosesji = Convert.ToInt32(Console.ReadLine());
+                    numerPosesji = Convert.ToString(Console.ReadLine());
                 }
                 catch (FormatException)
                 {
@@ -154,11 +156,11 @@ for (; ; )
                     return false;
                 }
 
-                int numerLokalu;
+                string numerLokalu;
                 try
                 {
                     Console.Write("Numer lokalu: ");
-                    numerLokalu = Convert.ToInt32(Console.ReadLine());
+                    numerLokalu = Convert.ToString(Console.ReadLine());
                 }
                 catch (FormatException)
                 {
@@ -370,24 +372,31 @@ for (; ; )
             WyswietlProduktyMagazyn();
             Console.WriteLine("-----------");
             Console.WriteLine("Podaj indeks magazynu:");
-            int userinputIndex = ReadUserNumber();
+            int userinputIndex = GetNumber();
             // pobranie magazynu po indeksie
-            Magazyn magazyn = getMagazynByIndex(userinputIndex);
+            try
+            {
+                Magazyn magazyn = getMagazynByIndex(userinputIndex);
+                // wyswietlenie informacji i list produktow
+                Console.WriteLine("-----------");
+                Console.WriteLine("Twoje produkty:");
+                WyswietlProdukty();
+                Console.WriteLine("-----------");
 
-            // wyswietlenie informacji i list produktow
-            Console.WriteLine("-----------");
-            Console.WriteLine("Twoje produkty:");
-            WyswietlProdukty();
-            Console.WriteLine("-----------");
+                // wybor produktu do dodania do magazynu i dodanie go
+                Console.WriteLine("Podaj indeks produktu do dodania do magazynu:");
+                int productIndex = GetNumber();
+                Produkt produkt = getProductByIndex(productIndex);
+                magazyn.DodajProdukt(produkt);
 
-            // wybor produktu do dodania do magazynu i dodanie go
-            Console.WriteLine("Podaj indeks produktu do dodania do magazynu:");
-            int productIndex = ReadUserNumber();
+                Console.WriteLine("Produkt dodany do magazynu.");
 
-            Produkt produkt = getProductByIndex(productIndex);
-            magazyn.DodajProdukt(produkt);
 
-            Console.WriteLine("Produkt dodany do magazynu.");
+            }
+            catch
+            {
+                Console.WriteLine("Blad, sprobuj ponownie.");
+            }
 
 
             return true;
@@ -412,9 +421,11 @@ for (; ; )
             WyswietlProduktyMagazyn();
             Console.WriteLine("-----------");
             Console.WriteLine("Podaj indeks magazynu:");
-            int userinputIndex = ReadUserNumber();
+            int userinputIndex = GetNumber();
             // pobranie magazynu po indeksie
-            Magazyn magazyn = getMagazynByIndex(userinputIndex);
+            try
+            {
+                Magazyn magazyn = getMagazynByIndex(userinputIndex);
 
             // wyswietlenie informacji i list produktow
             Console.WriteLine("-----------");
@@ -424,13 +435,16 @@ for (; ; )
 
             // wybor produktu do usuniecia z magazynu
             Console.WriteLine("Podaj indeks produktu do usuniecia z magazynu:");
-            int productIndex = ReadUserNumber();
-
+            int productIndex = GetNumber();
             Produkt produkt = getProductByIndex(productIndex);
             magazyn.UsunProdukt(produkt);
 
             Console.WriteLine("Produkt usuniety z magazynu.");
-
+                            }
+            catch
+            {
+                Console.WriteLine("Blad, sprobuj ponownie.");
+            }
 
             return true;
         }
@@ -457,6 +471,7 @@ for (; ; )
     // sprawdza czy indeks jest prawidłowy i zwraca produkt na podstawie indeksu
     Produkt getProductByIndex(int index)
     {
+        
         if (index >= 0 && index < produkty.Count)
         {
             return produkty[index];
@@ -534,13 +549,13 @@ int GetNumber()
 }
 
 //sprawdza czy uzytkownik na pewno podal liczbe 
-int ReadUserNumber()
-{
-    int number;
-    while (!int.TryParse(Console.ReadLine(), out number))
-    {
-        Console.WriteLine("Nieprawidlowy format liczby. Sprobuj ponownie.");
-    }
-    return number;
-}
+//int ReadUserNumber()
+//{
+//    int number;
+//    while (!int.TryParse(Console.ReadLine(), out number))
+//    {
+//        Console.WriteLine("Nieprawidlowy format liczby. Sprobuj ponownie.");
+//    }
+//    return number;
+//}
 
