@@ -14,11 +14,11 @@ namespace spozywczy
         public string Ulica { get; set; }
         private string KodPocztowy { get; set; }
         private string Miejscowosc { get; set; }
-        private int NumerPosesji { get; set; }
-        private int NumerLokalu { get; set; }
+        private string NumerPosesji { get; set; }
+        private string NumerLokalu { get; set; }
 
         // konstruktor klasy adres z parametrami ktore musza byc podane przy tworzeniu obiektu klasy adres
-        public Adres(string ulica, string kodPocztowy, string miejscowosc, int numerPosesji, int numerLokalu)
+        public Adres(string ulica, string kodPocztowy, string miejscowosc, string numerPosesji, string numerLokalu)
         {
             // przypisanie wartosci zmiennym w klasie adres 
             Ulica = ulica;
